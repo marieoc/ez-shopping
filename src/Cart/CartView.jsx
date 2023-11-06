@@ -17,7 +17,7 @@ const CartView = ({ cart, removeItem, clearBasket }) => {
             {cart?.map((cartItem, index) => {
                 return (
                     <div key={index}>
-                        <p>{cartItem.name} {cartItem.qty}</p>
+                        <p>{cartItem.title} {cartItem.qty}qty {cartItem.price}&#36;</p>
                         <form 
                             action=""
                             method=""

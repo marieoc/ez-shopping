@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const ItemListView = ({ items, handleSubmit }) => {
   return (
@@ -10,7 +10,7 @@ const ItemListView = ({ items, handleSubmit }) => {
 
                 </div>
                 <div className="item_content__wrapper">
-                  <p>{item.name} - {item.price}&#36;</p>
+                  <p>{item.title} - {item.price}&#36;</p>
                   <div className="add_to_cart_btn__wrapper">
                     <form 
                       action=""

@@ -1,19 +1,23 @@
 import {
-    ADD_QUANTITY, CLEAR_BASKET, REMOVE_ITEM
+    ADD_QUANTITY, CLEAR_BASKET, REMOVE_ITEM, STORE_ITEMS
 } from "./action-types";
 
 const initialStates = {
-    items: [
-        { id: 1, name: "Pen", desc: "Lorem Ipsum", price: 2, qty: 1 },
-        { id: 2, name: "Book", desc: "Lorem Ipsum", price: 14, qty: 1 },
-        { id: 3, name: "Bag", desc: "Lorem Ipsum", price: 20, qty: 1 },
-    ],
+    items: [],
     cart: []
 }
 
 const itemReducer = (state = initialStates, action) => {
     switch (action.type) {
+        case STORE_ITEMS:
+            return {
+                ...state,
+                items: action.payload
+            };
+
+
         case ADD_QUANTITY:
+            console.log(state.cart);
             const quantity = parseInt(action.payload.qty);
             const itemId = action.payload.item.id;
 
@@ -34,7 +38,7 @@ const itemReducer = (state = initialStates, action) => {
                     ...state,
                     cart: [
                         ...state.cart,
-                        { ...action.payload.item, quantity }
+                        { ...action.payload.item, qty: quantity }
                     ]
                 }
             } 

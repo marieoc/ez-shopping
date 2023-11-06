@@ -17,7 +17,7 @@ function NavBar() {
         <Link to="/">EZ Shopping</Link>
         <Flex gap={4} alignItems="center">
           <Link to="/users">Alan Turing 😀 </Link>
-          <Link to="/cart">🛒 {cart.length} items</Link>
+          <Link to="/cart">🛒 {cart?.length} items</Link>
           <IconButton
             variant="solid"
             aria-label="toggle theme"

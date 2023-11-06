@@ -6,7 +6,6 @@ const ItemListContainer = () => {
     // The store is instanciated in main.jsx, now we can access its actions.type through dispatch, and its by calling useSelector hook
     const dispatch = useDispatch();
     const items = useSelector((state) => state.itemReducer.items);
-    // console.log(items);
 
     const handleSubmit = (e, item) => {
         e.preventDefault();
