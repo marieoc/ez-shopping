@@ -6,6 +6,8 @@ import { useSelector } from "react-redux";
 function NavBar() {
   const cart = useSelector((state) => state.itemReducer.cart);
   const { colorMode, toggleColorMode } = useColorMode();
+  const firstName = useSelector((state) => state.usersReducer.firstname);
+  const lastName = useSelector((state) => state.usersReducer.lastname);
   return (
     <nav>
       <Flex
@@ -16,7 +18,10 @@ function NavBar() {
       >
         <Link to="/">EZ Shopping</Link>
         <Flex gap={4} alignItems="center">
-          <Link to="/users">Alan Turing 😀 </Link>
+          <Link to="/users">
+            {" "}
+            {firstName} {lastName} 😀{" "}
+          </Link>
           <Link to="/cart">🛒 {cart?.length} items</Link>
           <IconButton
             variant="solid"
