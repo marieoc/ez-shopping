@@ -1,7 +1,10 @@
 import React from "react";
+import ItemListContainer from "../Items/ItemListContainer";
 
 function HomePage() {
-  return <div>HomePage</div>;
+  return (
+    <ItemListContainer />
+  );
 }
 
 export default HomePage;
