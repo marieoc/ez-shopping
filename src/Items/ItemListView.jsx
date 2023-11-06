@@ -9,7 +9,7 @@ import {
   Heading,
 } from "@chakra-ui/react";
 
-const ItemListView = ({ items, handleSubmit }) => {
+const ItemListView = ({ items, handleSubmit, notify }) => {
   return (
     <Flex flexWrap={"wrap"} justifyContent={"center"} alignItems={"stretch"}>
       {items?.map((item) => {
@@ -19,9 +19,9 @@ const ItemListView = ({ items, handleSubmit }) => {
               <Image w={"100%"} src={item.image} alt={item.description} />
             </Box>
             <Flex flexBasis={"65%"} direction={"column"} p="1rem" gap="5">
-              <Heading size="lg" as="h4" fontWeight={"700"}>
+              <Text fontSize={"lg"} fontWeight={"700"}>
                 {item.title} <span>{item.category}</span>
-              </Heading>
+              </Text>
               <Text noOfLines={[1, 2, 3]}>{item.description}</Text>
               <Text fontSize={"xl"} fontWeight={"700"}>
                 &#36;{item.price}
@@ -30,11 +30,20 @@ const ItemListView = ({ items, handleSubmit }) => {
                 <form
                   action=""
                   method=""
-                  onSubmit={(e) => handleSubmit(e, item)}
+                  onSubmit={(e) => {
+                    handleSubmit(e, item);
+                    notify();
+                  }}
                 >
                   <label htmlFor="qty">
-                    <Text fontSize="lg">Quantity: </Text>
-                    <Input mt={2} name="qty" type={"number"} />
+                    Quantity:
+                    <Input
+                      name="qty"
+                      type={"number"}
+                      required
+                      min={1}
+                      max={100}
+                    />
                   </label>
                   <Button mt={4} colorScheme="yellow" type={"submit"}>
                     Add to basket
