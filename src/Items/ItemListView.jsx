@@ -1,5 +1,13 @@
 import React from "react";
-import { Flex, Box, Image, Text, Input, Button } from "@chakra-ui/react";
+import {
+  Flex,
+  Box,
+  Image,
+  Text,
+  Input,
+  Button,
+  Heading,
+} from "@chakra-ui/react";
 
 const ItemListView = ({ items, handleSubmit }) => {
   return (
@@ -10,16 +18,11 @@ const ItemListView = ({ items, handleSubmit }) => {
             <Box w={"50%"} flexBasis={"30%"}>
               <Image w={"100%"} src={item.image} alt={item.description} />
             </Box>
-            <Flex
-              flexBasis={"65%"}
-              direction={"column"}
-              p="1rem"
-              gap="5"
-            >
-              <Text fontSize={"lg"} fontWeight={"700"}>
+            <Flex flexBasis={"65%"} direction={"column"} p="1rem" gap="5">
+              <Heading size="lg" as="h4" fontWeight={"700"}>
                 {item.title} <span>{item.category}</span>
-              </Text>
-              <p>{item.description}</p>
+              </Heading>
+              <Text noOfLines={[1, 2, 3]}>{item.description}</Text>
               <Text fontSize={"xl"} fontWeight={"700"}>
                 &#36;{item.price}
               </Text>
@@ -30,10 +33,10 @@ const ItemListView = ({ items, handleSubmit }) => {
                   onSubmit={(e) => handleSubmit(e, item)}
                 >
                   <label htmlFor="qty">
-                    Quantity:
-                    <Input name="qty" type={"number"} />
+                    <Text fontSize="lg">Quantity: </Text>
+                    <Input mt={2} name="qty" type={"number"} />
                   </label>
-                  <Button colorScheme="yellow" type={"submit"}>
+                  <Button mt={4} colorScheme="yellow" type={"submit"}>
                     Add to basket
                   </Button>
                 </form>

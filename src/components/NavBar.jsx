@@ -1,4 +1,10 @@
-import { Flex, useColorMode, IconButton } from "@chakra-ui/react";
+import {
+  Flex,
+  useColorMode,
+  IconButton,
+  Text,
+  Heading,
+} from "@chakra-ui/react";
 import { FaSun, FaMoon } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -11,18 +17,28 @@ function NavBar() {
   return (
     <nav>
       <Flex
-        padding={2}
-        bg={"gray.400"}
+        padding={[1, 1, 5]}
         alignItems={"center"}
         justifyContent={"space-between"}
       >
-        <Link to="/">EZ Shopping</Link>
-        <Flex gap={4} alignItems="center">
+        <Link to="/">
+          {" "}
+          <Heading color="yellow.400"> EZ Shopping</Heading>
+        </Link>
+        <Flex gap={[0, 3, 10]} alignItems="center">
           <Link to="/users">
             {" "}
-            {firstName} {lastName} 😀{" "}
+            <Text fontSize="xl" fontWeight="bold">
+              {" "}
+              {firstName} {lastName} 👨
+            </Text>
           </Link>
-          <Link to="/cart">🛒 {cart?.length} items</Link>
+          <Link to="/cart">
+            {" "}
+            <Text fontSize="xl" fontWeight="bold">
+              🛒 <span style={{ color: "##ECC94B" }}>{cart?.length}</span> items
+            </Text>
+          </Link>
           <IconButton
             variant="solid"
             aria-label="toggle theme"
