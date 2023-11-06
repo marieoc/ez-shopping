@@ -8,6 +8,7 @@ const CartContainer = () => {
 
     const removeItem = (e, cartItemId) => {
         e.preventDefault();
+        console.log(cartItemId);
         dispatch({ type: "REMOVE_ITEM", payload: cartItemId })
     }
 
