@@ -10,12 +10,7 @@ const ItemListView = ({ items, handleSubmit }) => {
             <Box w={"50%"} flexBasis={"30%"}>
               <Image w={"100%"} src={item.image} alt={item.description} />
             </Box>
-            <Flex
-              flexBasis={"65%"}
-              direction={"column"}
-              p="1rem"
-              gap="5"
-            >
+            <Flex flexBasis={"65%"} direction={"column"} p="1rem" gap="5">
               <Text fontSize={"lg"} fontWeight={"700"}>
                 {item.title} <span>{item.category}</span>
               </Text>
@@ -31,7 +26,13 @@ const ItemListView = ({ items, handleSubmit }) => {
                 >
                   <label htmlFor="qty">
                     Quantity:
-                    <Input name="qty" type={"number"} />
+                    <Input
+                      name="qty"
+                      type={"number"}
+                      required
+                      min={1}
+                      max={100}
+                    />
                   </label>
                   <Button colorScheme="yellow" type={"submit"}>
                     Add to basket
