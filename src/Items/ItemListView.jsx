@@ -7,6 +7,7 @@ import {
   Input,
   Button,
   Heading,
+  Tag,
 } from "@chakra-ui/react";
 
 const ItemListView = ({ items, handleSubmit, notify }) => {
@@ -20,7 +21,7 @@ const ItemListView = ({ items, handleSubmit, notify }) => {
             </Box>
             <Flex flexBasis={"65%"} direction={"column"} p="1rem" gap="5">
               <Text fontSize={"lg"} fontWeight={"700"}>
-                {item.title} <span>{item.category}</span>
+                {item.title} <Tag>{item.category}</Tag>
               </Text>
               <Text noOfLines={[1, 2, 3]}>{item.description}</Text>
               <Text fontSize={"xl"} fontWeight={"700"}>

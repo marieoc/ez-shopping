@@ -18,6 +18,8 @@ function NavBar() {
     <nav>
       <Flex
         padding={[1, 1, 5]}
+        borderBottom={"2px"}
+        borderBottomColor={"orange"}
         alignItems={"center"}
         justifyContent={"space-between"}
       >
