@@ -1,5 +1,5 @@
 import {
-    ADD_QUANTITY
+    ADD_QUANTITY, CLEAR_BASKET, REMOVE_ITEM
 } from "./action-types";
 
 const initialStates = {
@@ -19,8 +19,20 @@ const itemReducer = (state = initialStates, action) => {
                 ...state,
                 cart: [
                     ...state.cart,
-                    { ...action.payload, qty: action.payload.qty}
+                    { ...action.payload.item, qty: action.payload.qty}
                 ]
+            }
+        
+        case REMOVE_ITEM: 
+            return {
+                ...state,
+                cart: state.cart.filter((item) => item.id !== action.payload)
+            }
+
+        case CLEAR_BASKET:
+            return {
+                ...state,
+                cart: []
             }
 
         default: {
