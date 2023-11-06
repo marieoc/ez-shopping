@@ -2,14 +2,16 @@ import React from "react";
 import CartView from "./CartView";
 import { useDispatch, useSelector } from "react-redux";
 import CartTotal from "./CartTotal";
+import toaster, { Toaster } from "react-hot-toast";
 
 const CartContainer = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.itemReducer.cart);
 
+  const notify = (msg) => toaster.success(msg);
+
   const removeItem = (e, cartItemId) => {
     e.preventDefault();
-    console.log(cartItemId);
     dispatch({ type: "REMOVE_ITEM", payload: cartItemId });
   };
 
@@ -19,7 +21,13 @@ const CartContainer = () => {
 
   return (
     <>
-      <CartView cart={cart} removeItem={removeItem} clearBasket={clearBasket} />
+      <Toaster position="top-center" />
+      <CartView
+        cart={cart}
+        removeItem={removeItem}
+        clearBasket={clearBasket}
+        notify={notify}
+      />
       <CartTotal cart={cart} />
     </>
   );

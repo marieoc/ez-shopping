@@ -1,7 +1,7 @@
 import React from "react";
 import { Flex, Box, Image, Text, Button } from "@chakra-ui/react";
 
-const CartView = ({ cart, removeItem, clearBasket }) => {
+const CartView = ({ cart, removeItem, clearBasket, notify }) => {
   return (
     <Flex w="100vw" flexDirection={"column"} p="2rem">
       <div>
@@ -12,7 +12,13 @@ const CartView = ({ cart, removeItem, clearBasket }) => {
         </Text>
       </div>
       <div>
-        <Button colorScheme="yellow" onClick={clearBasket}>
+        <Button
+          colorScheme="yellow"
+          onClick={() => {
+            clearBasket();
+            notify("Cart is not empty.");
+          }}
+        >
           Clear basket
         </Button>
       </div>
@@ -55,7 +61,10 @@ const CartView = ({ cart, removeItem, clearBasket }) => {
                   <form
                     action=""
                     method=""
-                    onSubmit={(e) => removeItem(e, cartItem.id)}
+                    onSubmit={(e) => {
+                      removeItem(e, cartItem.id);
+                      notify("Item successfully removed from cart.");
+                    }}
                   >
                     <Button colorScheme="yellow" type="submit">
                       Remove
