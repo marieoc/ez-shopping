@@ -1,7 +1,7 @@
 import React from "react";
 import { Flex, Box, Image, Text, Input, Button } from "@chakra-ui/react";
 
-const ItemListView = ({ items, handleSubmit }) => {
+const ItemListView = ({ items, handleSubmit, notify }) => {
   return (
     <Flex flexWrap={"wrap"} justifyContent={"center"} alignItems={"stretch"}>
       {items?.map((item) => {
@@ -22,7 +22,10 @@ const ItemListView = ({ items, handleSubmit }) => {
                 <form
                   action=""
                   method=""
-                  onSubmit={(e) => handleSubmit(e, item)}
+                  onSubmit={(e) => {
+                    handleSubmit(e, item);
+                    notify();
+                  }}
                 >
                   <label htmlFor="qty">
                     Quantity:

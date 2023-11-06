@@ -16,10 +16,16 @@ const CartView = ({ cart, removeItem, clearBasket }) => {
           Clear basket
         </Button>
       </div>
-      <Flex p="2rem" flexDirection={'column'}>
+      <Flex p="2rem" flexDirection={"column"}>
         {cart?.map((cartItem, index) => {
           return (
-            <Flex width={"100%"} justifyContent={'center'} m="2rem" p="1rem" key={cartItem.id}>
+            <Flex
+              width={"100%"}
+              justifyContent={"center"}
+              m="2rem"
+              p="1rem"
+              key={cartItem.id}
+            >
               <Box w={"50%"} flexBasis={"30%"}>
                 <Image
                   w={"100%"}
@@ -33,7 +39,7 @@ const CartView = ({ cart, removeItem, clearBasket }) => {
                 direction={"column"}
                 className="item_content__wrapper"
                 p="1rem"
-                gap='0.5rem'
+                gap="0.5rem"
               >
                 <Text fontSize={"lg"} fontWeight={"700"}>
                   {cartItem.title} <span>{cartItem.category}</span>
@@ -42,7 +48,9 @@ const CartView = ({ cart, removeItem, clearBasket }) => {
                 <Text fontSize={"xl"} fontWeight={"700"}>
                   &#36;{cartItem.price}
                 </Text>
-                <Text fontSize={"xl"} fontWeight={"700"}>Quantity: {cartItem.qty}</Text>
+                <Text fontSize={"xl"} fontWeight={"700"}>
+                  Quantity: {cartItem.qty}
+                </Text>
                 <div className="add_to_cart_btn__wrapper">
                   <form
                     action=""
