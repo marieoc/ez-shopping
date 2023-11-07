@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CartView from "./CartView";
 import { useDispatch, useSelector } from "react-redux";
 import CartTotal from "./CartTotal";
@@ -19,6 +19,20 @@ const CartContainer = () => {
     dispatch({ type: "CLEAR_BASKET" });
   };
 
+  const [quantity, setQuantity] = useState('');
+  const [editQuantity, setEditQuantity] = useState({
+    id: '',
+    status: false
+  });
+
+  const updateQuantity = (e, itemId) => {
+    e.preventDefault();
+
+    if (editQuantity.status && editQuantity.id === itemId) {
+      return dispatch({ type: 'UPDATE_QUANTITY', payload: {itemId, quantity} })
+    }
+  };
+
   return (
     <>
       <Toaster position="top-center" />
@@ -27,6 +41,11 @@ const CartContainer = () => {
         removeItem={removeItem}
         clearBasket={clearBasket}
         notify={notify}
+        updateQuantity={updateQuantity}
+        quantity={quantity}
+        setQuantity={setQuantity}
+        editQuantity={editQuantity}
+        setEditQuantity={setEditQuantity}
       />
       <CartTotal cart={cart} />
     </>

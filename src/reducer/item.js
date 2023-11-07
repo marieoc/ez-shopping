@@ -3,11 +3,13 @@ import {
   CLEAR_BASKET,
   REMOVE_ITEM,
   STORE_ITEMS,
+  UPDATE_QUANTITY,
 } from "./action-types";
 
 const initialStates = {
   items: [],
   cart: [],
+  newQty: ''
 };
 
 const itemReducer = (state = initialStates, action) => {
@@ -41,6 +43,19 @@ const itemReducer = (state = initialStates, action) => {
           cart: [...state.cart, { ...action.payload.item, qty: quantity }],
         };
       }
+
+    case UPDATE_QUANTITY:
+      const updatedQuantity = parseInt(action.payload.quantity);
+      const item = state.cart.find((item) => item.id === action.payload.itemId);
+      console.log(item);
+
+      const updatedCart = state.cart.map((item) => {
+        return { ...item, qty: updatedQuantity };
+      });
+      return {
+        ...state,
+        cart: updatedCart,
+      };
 
     case REMOVE_ITEM:
       console.log(action.payload);

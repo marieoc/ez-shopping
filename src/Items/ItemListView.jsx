@@ -7,7 +7,7 @@ const ItemListView = ({ items, handleSubmit, notify }) => {
       {items?.map((item) => {
         return (
           <div
-            className="flex flex-col tablet:flex-row items-center justify-center m-4 p-2 w-full max-w-[600px]"
+            className="flex flex-col items-center justify-center tablet:flex-row tablet:items-start my-8 p-2 w-full max-w-[600px]"
             key={item.id}
           >
             <Box w={"50%"} flexBasis={"30%"}>
