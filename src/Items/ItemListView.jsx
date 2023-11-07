@@ -1,15 +1,5 @@
 import React from "react";
-import {
-  Flex,
-  Box,
-  Image,
-  Text,
-  Input,
-  Button,
-  Heading,
-  Tag,
-  HStack,
-} from "@chakra-ui/react";
+import { Flex, Box, Image, Text, Button, Tag, HStack } from "@chakra-ui/react";
 
 const ItemListView = ({ items, handleSubmit, notify }) => {
   return (
@@ -39,13 +29,11 @@ const ItemListView = ({ items, handleSubmit, notify }) => {
                 >
                   <HStack>
                     <label htmlFor="qty">Quantity:</label>
-                    <Input
+                    <input
+                      className="w-full border rounded p-1 border-gray max-w-[50px]"
                       name="qty"
                       type={"number"}
                       placeholder="0"
-                      size={"sm"}
-                      w={"15%"}
-                      variant={"outline"}
                       required
                       min={1}
                       max={100}
