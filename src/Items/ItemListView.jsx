@@ -8,6 +8,7 @@ import {
   Button,
   Heading,
   Tag,
+  HStack,
 } from "@chakra-ui/react";
 
 const ItemListView = ({ items, handleSubmit, notify }) => {
@@ -36,16 +37,21 @@ const ItemListView = ({ items, handleSubmit, notify }) => {
                     notify();
                   }}
                 >
-                  <label htmlFor="qty">
-                    Quantity:
+                  <HStack>
+                    <label htmlFor="qty">Quantity:</label>
                     <Input
                       name="qty"
                       type={"number"}
+                      placeholder="0"
+                      size={"sm"}
+                      w={"15%"}
+                      variant={"outline"}
                       required
                       min={1}
                       max={100}
                     />
-                  </label>
+                  </HStack>
+
                   <Button mt={4} colorScheme="yellow" type={"submit"}>
                     Add to basket
                   </Button>
