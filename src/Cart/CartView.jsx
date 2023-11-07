@@ -4,11 +4,14 @@ import { Flex, Tag, Image, Text, Button } from "@chakra-ui/react";
 const CartView = ({ cart, removeItem, clearBasket, notify }) => {
   return (
     <div className="flex flex-col p-6 space-y-6">
-      <div className="p-2 font-bold space-y-4">
-        <h1 className="text-2xl">Hi Alan!</h1>
-        <p>There are {cart.length} {cart.length <= 1 ? "item" : "items"} in your basket</p>
+      <div className="p-2 font-bold space-y-4 flex flex-col   items-center tablet:items-start  ">
+        <h1 className="text-2xl  ">Hi Alan!</h1>
+        <p>
+          There are {cart.length} {cart.length <= 1 ? "item" : "items"} in your
+          basket
+        </p>
       </div>
-      <div>
+      <div className=" mx-auto  tablet:mx-0">
         <Button
           colorScheme="yellow"
           onClick={() => {
@@ -44,7 +47,7 @@ const CartView = ({ cart, removeItem, clearBasket, notify }) => {
                 <Text fontSize={"lg"} fontWeight={"700"}>
                   {cartItem.title} <Tag>{cartItem.category}</Tag>
                 </Text>
-                <p>{cartItem.description}</p>
+                <p className="italic tablet:w-[60%] ">{cartItem.description}</p>
                 <Text fontSize={"2xl"} fontWeight={"700"}>
                   &#36;{cartItem.price}
                 </Text>
