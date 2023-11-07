@@ -1,5 +1,4 @@
 import React from "react";
-import { Flex, Text } from "@chakra-ui/react";
 
 const CartTotal = ({ cart }) => {
   const cartSubTotal = cart.reduce(
@@ -9,11 +8,9 @@ const CartTotal = ({ cart }) => {
 
   return (
     <>
-      <Flex w={"100%"} justifyContent={"flex-end"} p="1rem">
-        <Text fontSize={"2xl"} fontWeight={"700"}>
-          Total: &#36;{cartSubTotal.toFixed(2)}
-        </Text>
-      </Flex>
+      <div className="w-full flex justify-end p-4 pb-8">
+        <p className="text-3xl font-bold">Total: &#36;{cartSubTotal.toFixed(2)}</p>
+      </div>
     </>
   );
 };

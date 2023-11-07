@@ -6,7 +6,7 @@ function saveToLocalStorage(state) {
     // console.log('save to localStorage');
     try {
         const serialisedState = JSON.stringify(state);
-        console.log(serialisedState);
+        // console.log(serialisedState);
         localStorage.setItem('ez-shopping', serialisedState);
     }
     catch (err) {
