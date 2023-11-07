@@ -4,6 +4,7 @@ import {
   IconButton,
   Text,
   Heading,
+  Box,
 } from "@chakra-ui/react";
 import { FaSun, FaMoon } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -37,8 +38,17 @@ function NavBar() {
           </Link>
           <Link to="/cart">
             {" "}
-            <Text fontSize="xl" fontWeight="bold">
-              🛒 <span style={{ color: "##ECC94B" }}>{cart?.length}</span> items
+            <Text fontSize="xl" className=" relative" fontWeight="bold">
+              🛒{" "}
+              <span className="hidden tablet:inline-block ">
+                {cart?.length} items{" "}
+              </span>
+              <Box
+                bg="yellow.400"
+                className="  tablet:hidden text-center rounded-full px-2  text-sm absolute -top-1 left-3 "
+              >
+                <span className=" text-black ">{cart?.length}</span>
+              </Box>
             </Text>
           </Link>
           <IconButton
