@@ -14,6 +14,8 @@ function UsersPage() {
     useSelector((state) => state.usersReducer.email)
   );
 
+  const userName = useSelector((state) => state.usersReducer.firstname);
+
   const submitHandler = (e) => {
     e.preventDefault();
 
@@ -25,7 +27,7 @@ function UsersPage() {
   return (
     <Box w={[300, 400, 500]} mt={5} mx="auto">
       <Box my="10">
-        <Heading as="h2">Hi {firstName} !</Heading>
+        <Heading as="h2">Hi {userName}!</Heading>
         <Text fontSize="3xl">Customize your profile here!</Text>
       </Box>
       <form action="" onSubmit={submitHandler}>
