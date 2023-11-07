@@ -26,14 +26,20 @@ function NavBar() {
       >
         <Link to="/">
           {" "}
-          <Heading color="yellow.400"> EZ Shopping</Heading>
+          <Heading color="yellow.400">
+            {" "}
+            <span className="  text-[1.5rem] tablet:text-[2rem] ">
+              EZ Shopping{" "}
+            </span>
+          </Heading>
         </Link>
-        <Flex gap={[0, 3, 10]} alignItems="center">
+        <Flex gap={[3, 3, 10]} alignItems="center">
           <Link to="/users">
             {" "}
             <Text fontSize="xl" fontWeight="bold">
               {" "}
-              {firstName} {lastName} 👨
+              {firstName} {lastName}{" "}
+              <span className=" hidden tablet:inline-block"> 👨</span>
             </Text>
           </Link>
           <Link to="/cart">
