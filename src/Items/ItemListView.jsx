@@ -6,7 +6,10 @@ const ItemListView = ({ items, handleSubmit, notify }) => {
     <Flex flexWrap={"wrap"} justifyContent={"center"} alignItems={"stretch"}>
       {items?.map((item) => {
         return (
-          <Flex width={"100%"} m="2rem" p="1rem" maxW={"600px"} key={item.id}>
+          <div
+            className="flex flex-col tablet:flex-row items-center justify-center m-4 p-2 w-full max-w-[600px]"
+            key={item.id}
+          >
             <Box w={"50%"} flexBasis={"30%"}>
               <Image w={"100%"} src={item.image} alt={item.description} />
             </Box>
@@ -40,13 +43,15 @@ const ItemListView = ({ items, handleSubmit, notify }) => {
                     />
                   </HStack>
 
-                  <Button mt={4} colorScheme="yellow" type={"submit"}>
-                    Add to basket
-                  </Button>
+                  <div className="flex items-center justify-center tablet:justify-start p-1">
+                    <Button mt={4} colorScheme="yellow" type={"submit"}>
+                      Add to basket
+                    </Button>
+                  </div>
                 </form>
               </div>
             </Flex>
-          </Flex>
+          </div>
         );
       })}
     </Flex>
