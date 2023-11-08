@@ -44,9 +44,9 @@ function NavBar() {
           </Link>
           <Link to="/cart">
             {" "}
-            <Text fontSize="xl" className=" relative" fontWeight="bold">
+            <Box className="relative">
               🛒{" "}
-              <span className="hidden tablet:inline-block ">
+              <span className="hidden tablet:inline-block text-xl font-bold">
                 {cart?.length} items{" "}
               </span>
               <Box
@@ -55,7 +55,7 @@ function NavBar() {
               >
                 <span className=" text-black ">{cart?.length}</span>
               </Box>
-            </Text>
+            </Box>
           </Link>
           <IconButton
             variant="solid"
