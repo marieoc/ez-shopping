@@ -1,7 +1,11 @@
 import { Box, Heading, Text, Center } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect } from "react";
 
 function ErrorPage() {
+  useEffect(() => {
+    document.title = "Error Page";
+  }, []);
+
   return (
     <Box h={"100vh"}>
       <Center mt={10}>
