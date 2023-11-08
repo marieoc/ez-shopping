@@ -1,29 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { Box, Input, Flex, Button, Heading, Text } from "@chakra-ui/react";
-import { useSelector, useDispatch } from "react-redux";
-function UsersPage() {
-  const dispatch = useDispatch();
 
-  const [firstName, setFirstName] = useState(
-    useSelector((state) => state.usersReducer.firstname)
-  );
-  const [lastName, setLastName] = useState(
-    useSelector((state) => state.usersReducer.lastname)
-  );
-  const [email, setEmail] = useState(
-    useSelector((state) => state.usersReducer.email)
-  );
-
-  const userName = useSelector((state) => state.usersReducer.firstname);
-
-  const submitHandler = (e) => {
-    e.preventDefault();
-
-    dispatch({
-      type: "CHANGE_USER_DATA",
-      payload: { firstname: firstName, lastname: lastName, email: email },
-    });
-  };
+const UserView = ({
+  firstName,
+  setFirstName,
+  lastName,
+  setLastName,
+  email,
+  setEmail,
+  userName,
+  submitHandler,
+}) => {
   return (
     <Box w={[300, 400, 500]} mt={5} mx="auto">
       <Box my="10">
@@ -32,33 +19,36 @@ function UsersPage() {
       </Box>
       <form action="" onSubmit={submitHandler}>
         <Flex alignItems="center" gap="3" flex="1">
-          <label style={{ width: "27%" }} htmlFor="">
+          <label style={{ width: "27%" }} htmlFor="fname">
             {" "}
-            Firstname
+            Firstname :
           </label>
           <Input
+            id="fname"
             size="sm"
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
           />
         </Flex>
         <Flex mt="4" alignItems="center" gap="3" flex="1">
-          <label style={{ width: "27%" }} htmlFor="">
+          <label style={{ width: "27%" }} htmlFor="lname">
             {" "}
-            Lastname
+            Lastname :
           </label>
           <Input
+            id="lname"
             size="sm"
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
           />
         </Flex>
         <Flex mt="4" alignItems="center" gap="3">
-          <label style={{ width: "27%" }} htmlFor="">
+          <label style={{ width: "27%" }} htmlFor="email">
             {" "}
-            Email
+            Email :
           </label>
           <Input
+            id="email"
             type="email"
             size="sm"
             value={email}
@@ -78,6 +68,6 @@ function UsersPage() {
       </form>
     </Box>
   );
-}
+};
 
-export default UsersPage;
+export default UserView;

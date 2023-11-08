@@ -35,7 +35,7 @@ function NavBar() {
           </Heading>
         </Link>
         <Flex gap={[5, 3, 10]} alignItems="center">
-          <Link to="/users">
+          <Link to="/user">
             {" "}
             <Text fontSize="xl" fontWeight="bold">
               {" "}

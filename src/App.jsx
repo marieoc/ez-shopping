@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import UsersPage from "./pages/UsersPage";
+import UserPage from "./pages/UserPage";
 import ErrorPage from "./pages/ErrorPage";
 import CartPage from "./pages/CartPage";
 import NavBar from "./components/NavBar";
@@ -28,7 +28,7 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="users" element={<UsersPage />} />
+          <Route path="user" element={<UserPage />} />
           <Route path="cart" element={<CartPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
