@@ -4,8 +4,6 @@ import { useSelector } from "react-redux";
 
 const CartView = ({ cart, removeItem, clearBasket, notify, updateQuantity, quantity, setQuantity, editQuantity, setEditQuantity }) => {
 
-  
-
   return (
     <div className="flex flex-col p-6 space-y-6">
       <div className="p-2 font-bold space-y-4 flex flex-col items-center tablet:items-start">
@@ -63,7 +61,6 @@ const CartView = ({ cart, removeItem, clearBasket, notify, updateQuantity, quant
                         setQuantity(e.target.value);
                         setEditQuantity({ id: cartItem.id, status: true })
                       }}
-                      onBlur={() => setEditQuantity({ id: '', status: false })}
                       value={editQuantity.status && editQuantity.id === cartItem.id ? quantity : cartItem.qty}
                       className="w-full border rounded p-1 border-gray max-w-[50px]"
                       name="qty"

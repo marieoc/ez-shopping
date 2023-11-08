@@ -27,10 +27,9 @@ const CartContainer = () => {
 
   const updateQuantity = (e, itemId) => {
     e.preventDefault();
+    dispatch({ type: 'UPDATE_QUANTITY', payload: {itemId, quantity} });
 
-    if (editQuantity.status && editQuantity.id === itemId) {
-      return dispatch({ type: 'UPDATE_QUANTITY', payload: {itemId, quantity} })
-    }
+    return setEditQuantity({ id: '', status: false})
   };
 
   return (
