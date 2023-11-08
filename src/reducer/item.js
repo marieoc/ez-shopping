@@ -46,11 +46,13 @@ const itemReducer = (state = initialStates, action) => {
 
     case UPDATE_QUANTITY:
       const updatedQuantity = parseInt(action.payload.quantity);
-      const item = state.cart.find((item) => item.id === action.payload.itemId);
-      console.log(item);
+      const cartItemId = action.payload.itemId;
 
       const updatedCart = state.cart.map((item) => {
-        return { ...item, qty: updatedQuantity };
+        if (item.id === cartItemId) {
+          return { ...item, qty: updatedQuantity };
+        }
+        return item;
       });
       return {
         ...state,
