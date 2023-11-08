@@ -22,18 +22,19 @@ function NavBar() {
         borderBottom={"2px"}
         borderBottomColor={"orange"}
         alignItems={"center"}
+        alignContent={"center"}
         justifyContent={"space-between"}
       >
         <Link to="/">
           {" "}
           <Heading color="yellow.400">
             {" "}
-            <span className="  text-[1.5rem] tablet:text-[2rem] ">
+            <span className="  text-[1.3rem] tablet:text-[2rem] ">
               EZ Shopping{" "}
             </span>
           </Heading>
         </Link>
-        <Flex gap={[3, 3, 10]} alignItems="center">
+        <Flex gap={[5, 3, 10]} alignItems="center">
           <Link to="/users">
             {" "}
             <Text fontSize="xl" fontWeight="bold">
@@ -47,7 +48,7 @@ function NavBar() {
             <Box className="relative">
               🛒{" "}
               <span className="hidden tablet:inline-block text-xl font-bold">
-                {cart?.length} items{" "}
+                <span className=" text-yellow-400">{cart?.length} </span> items{" "}
               </span>
               <Box
                 bg="yellow.400"

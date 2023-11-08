@@ -34,7 +34,7 @@ function UsersPage() {
         <Flex alignItems="center" gap="3" flex="1">
           <label style={{ width: "27%" }} htmlFor="">
             {" "}
-            Firstname :
+            Firstname
           </label>
           <Input
             size="sm"
@@ -45,7 +45,7 @@ function UsersPage() {
         <Flex mt="4" alignItems="center" gap="3" flex="1">
           <label style={{ width: "27%" }} htmlFor="">
             {" "}
-            Lastname :
+            Lastname
           </label>
           <Input
             size="sm"
@@ -56,7 +56,7 @@ function UsersPage() {
         <Flex mt="4" alignItems="center" gap="3">
           <label style={{ width: "27%" }} htmlFor="">
             {" "}
-            Email :
+            Email
           </label>
           <Input
             type="email"

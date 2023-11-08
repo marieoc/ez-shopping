@@ -14,7 +14,6 @@ function App() {
   const fetchItems = async () => {
     const response = await fetch("https://fakestoreapi.com/products?limit=4");
     const data = await response.json();
-    console.log(data);
 
     dispatch({ type: "STORE_ITEMS", payload: data });
   };

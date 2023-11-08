@@ -17,7 +17,7 @@ const ItemListView = ({ items, handleSubmit, notify }) => {
               <Text fontSize={"lg"} fontWeight={"700"}>
                 {item.title} <Tag>{item.category}</Tag>
               </Text>
-              <Text noOfLines={[1, 2, 3]}>{item.description}</Text>
+              <Text noOfLines={[2, 2, 3]}>{item.description}</Text>
               <Text fontSize={"xl"} fontWeight={"700"}>
                 &#36;{item.price}
               </Text>
