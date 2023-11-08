@@ -2,9 +2,7 @@ import React from "react";
 import ItemListContainer from "../Items/ItemListContainer";
 
 function HomePage() {
-  return (
-    <ItemListContainer />
-  );
+  return <ItemListContainer />;
 }
 
 export default HomePage;

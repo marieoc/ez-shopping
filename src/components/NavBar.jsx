@@ -13,8 +13,8 @@ import { useSelector } from "react-redux";
 function NavBar() {
   const cart = useSelector((state) => state.itemReducer.cart);
   const { colorMode, toggleColorMode } = useColorMode();
-  const firstName = useSelector((state) => state.usersReducer.firstname);
-  const lastName = useSelector((state) => state.usersReducer.lastname);
+  const firstName = useSelector((state) => state.userReducer.firstname);
+  const lastName = useSelector((state) => state.userReducer.lastname);
   return (
     <nav>
       <Flex

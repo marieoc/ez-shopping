@@ -4,7 +4,7 @@ const initialState = {
   lastname: "Turing",
   email: "alan@turing.dev",
 };
-const usersReducer = (state = initialState, action) => {
+const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case CHANGE_USER_DATA:
       return {
@@ -19,4 +19,4 @@ const usersReducer = (state = initialState, action) => {
   }
 };
 
-export default usersReducer;
+export default userReducer;

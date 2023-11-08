@@ -5,6 +5,12 @@ import CartTotal from "./CartTotal";
 import toaster, { Toaster } from "react-hot-toast";
 
 const CartContainer = () => {
+  const [quantity, setQuantity] = useState("");
+  const [editQuantity, setEditQuantity] = useState({
+    id: "",
+    status: false,
+  });
+
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.itemReducer.cart);
 
@@ -19,17 +25,11 @@ const CartContainer = () => {
     dispatch({ type: "CLEAR_BASKET" });
   };
 
-  const [quantity, setQuantity] = useState('');
-  const [editQuantity, setEditQuantity] = useState({
-    id: '',
-    status: false
-  });
-
   const updateQuantity = (e, itemId) => {
     e.preventDefault();
-    dispatch({ type: 'UPDATE_QUANTITY', payload: {itemId, quantity} });
+    dispatch({ type: "UPDATE_QUANTITY", payload: { itemId, quantity } });
 
-    return setEditQuantity({ id: '', status: false})
+    return setEditQuantity({ id: "", status: false });
   };
 
   return (

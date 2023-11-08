@@ -6,16 +6,16 @@ const UserContainer = () => {
   const dispatch = useDispatch();
 
   const [firstName, setFirstName] = useState(
-    useSelector((state) => state.usersReducer.firstname)
+    useSelector((state) => state.userReducer.firstname)
   );
   const [lastName, setLastName] = useState(
-    useSelector((state) => state.usersReducer.lastname)
+    useSelector((state) => state.userReducer.lastname)
   );
   const [email, setEmail] = useState(
-    useSelector((state) => state.usersReducer.email)
+    useSelector((state) => state.userReducer.email)
   );
 
-  const userName = useSelector((state) => state.usersReducer.firstname);
+  const userName = useSelector((state) => state.userReducer.firstname);
 
   const submitHandler = (e) => {
     e.preventDefault();
