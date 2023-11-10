@@ -27,6 +27,11 @@ const CartContainer = () => {
 
   const updateQuantity = (e, itemId) => {
     e.preventDefault();
+
+    if (quantity === "") {
+      return;
+    }
+
     dispatch({ type: "UPDATE_QUANTITY", payload: { itemId, quantity } });
 
     return setEditQuantity({ id: "", status: false });
