@@ -12,7 +12,7 @@ function App() {
   const dispatch = useDispatch();
 
   const fetchItems = async () => {
-    const response = await fetch("https://fakestoreapi.com/products?limit=4");
+    const response = await fetch("https://fakestoreapi.com/products?limit=6");
     const data = await response.json();
 
     dispatch({ type: "STORE_ITEMS", payload: data });
